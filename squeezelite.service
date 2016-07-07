@@ -1,0 +1,20 @@
+[Unit]
+Description=Starts and stops the Squeezelite
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+GuessMainPID=yes
+User=pi
+ExecStart=/home/pi/startSqueezelite.sh
+Restart=on-failure
+WorkingDirectory=/home/pi
+
+[Install]
+WantedBy=multi-user.target
+
+
+sudo systemctl enable squeezelite
+sudo systemctl start squeezelite
+sudo systemctl status squeezelite
