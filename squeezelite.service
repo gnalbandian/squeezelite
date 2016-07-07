@@ -13,8 +13,3 @@ WorkingDirectory=/home/pi
 
 [Install]
 WantedBy=multi-user.target
-
-
-sudo systemctl enable squeezelite
-sudo systemctl start squeezelite
-sudo systemctl status squeezelite
