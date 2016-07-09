@@ -26,6 +26,14 @@ SL_DOWNLOAD_URL="http://ralph_irving.users.sourceforge.net/pico/squeezelite-armv
 
 LINUX_DISTRO=$(uname -r)
 
+LINUX_DISTRO=$(uname -r)
+if [[ $LINUX_DISTRO == *"piCore"* ]]
+then
+  DAEMON=/mnt/mmcblk0p2/tce/${NAME}
+else
+  DAEMON=/home/pi/squeezelite/${NAME}
+fi
+
 
 PIDFILE=/var/run/${NAME}.pid
 SCRIPTNAME=/etc/init.d/squeezelite
