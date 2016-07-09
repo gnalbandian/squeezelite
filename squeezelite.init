@@ -20,17 +20,12 @@
 # PATH should only include /usr/* if it runs after the mountnfs.sh script
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="Squeezebox client"
-NAME=squeezelite-armv6hf
+NAME=squeezelite
 SL_DOWNLOAD_URL="http://ralph_irving.users.sourceforge.net/pico/squeezelite-armv6hf-noffmpeg"
 # alternative (older version): http://squeezelite-downloads.googlecode.com/git/squeezelite-armv6hf
 
 LINUX_DISTRO=$(uname -r)
-if [[ $LINUX_DISTRO == *"piCore"* ]]
-then
-  DAEMON=/mnt/mmcblk0p2/tce/${NAME}
-else
-  DAEMON=/usr/bin/${NAME}
-fi
+
 
 PIDFILE=/var/run/${NAME}.pid
 SCRIPTNAME=/etc/init.d/squeezelite
@@ -55,7 +50,7 @@ fi
 
 # Get user settings for squeezelite (it should contain settings like SL_SOUNDCARD, SB_SERVER_IP, SL_ALSA_PARAMS etc.)
 # For the default script, see: http://www.gerrelt.nl/RaspberryPi/squeezelite_settings.sh
-SL_SETTINGS=/usr/local/bin/squeezelite_settings.sh
+SL_SETTINGS=/home/pi/squeezelite/squeezelite_settings.sh
 if [ ! -x "$SL_SETTINGS" ]
 then
   echo "Error: script $SL_SETTINGS not found."
