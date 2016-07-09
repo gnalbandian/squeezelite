@@ -1,15 +1,12 @@
 [Unit]
-Description=Starts and stops the Squeezelite
-Wants=network-online.target
-After=network-online.target
+Description=Squeezelite LMS player
+After=network.target
 
 [Service]
-Type=simple
-GuessMainPID=yes
-User=root
-ExecStart=/home/pi/startSqueezelite.sh
-Restart=on-failure
-WorkingDirectory=/home/pi
+Type=forking
+ExecStart=/etc/init.d/squeezelite start
+ExecStop=/etc/init.d/squeezelite stop
+PIDFile=/var/run/squeezelite-armv6hf.pid
 
 [Install]
 WantedBy=multi-user.target
