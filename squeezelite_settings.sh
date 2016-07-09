@@ -44,7 +44,7 @@ SL_SOUNDCARD="sysdefault:CARD=ALSA"
 # ----- MISC SETTINGS -----
 # Uncomment the next line (remove hash) if you want to set ALSA parameters (-a option, set to buffer size 80).
 # format:  <b>:<p>:<f>:<m>, b = buffer time in ms or size in bytes, p = period count or size in bytes, f sample format (16|24|24_3|32), m = use mmap (0|1)
-#SL_ALSA_PARAMS="80:::0"
+SL_ALSA_PARAMS="300:::0"
 
 # Uncomment the next TWO lines to turn on logging (-f and -d option):
 #SL_LOGFILE="/var/log/squeezelite.log"
@@ -73,6 +73,6 @@ SL_SOUNDCARD="sysdefault:CARD=ALSA"
 #SL_DOWNLOAD_URL="http://squeezelite-downloads.googlecode.com/git/squeezelite-armv6hf"
 
 # If you want to use different squeezelite options, not set by this script, use the next line:
-#SL_ADDITIONAL_OPTIONS=""
+SL_ADDITIONAL_OPTIONS="-v"
 
 # =========================================================
