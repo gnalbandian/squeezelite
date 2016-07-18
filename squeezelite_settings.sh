@@ -8,7 +8,7 @@
 
 # ----- SOUNDCARD -----
 # Set the soundcard
-SL_SOUNDCARD="sysdefault:CARD=ALSA"
+SL_SOUNDCARD="hw:CARD=ALSA"
 #
 # For Logilink USB soundcard UA0053, use:
 #SL_SOUNDCARD="front:CARD=Set,DEV=0"
