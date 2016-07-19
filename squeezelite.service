@@ -7,6 +7,7 @@ Type=forking
 ExecStart=/etc/init.d/squeezelite start
 ExecStop=/etc/init.d/squeezelite stop
 PIDFile=/var/run/squeezelite.pid
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
